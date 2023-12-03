@@ -190,7 +190,7 @@ if (!client.connected())
   auto rest = img.getImgSize();
   while (rest > 0 && client.connected())
   {
-    auto n = client.write(p, rest > 1460 ? 1460 : rest); // default packet size = 1320　最大1460まで
+    auto n = client.write(p, rest > 1460 ? 1460 : rest); //  packet size = 1460に分割して送信
     p += n;
     rest -= n;
   }
